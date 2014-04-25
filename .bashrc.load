@@ -11,7 +11,7 @@ function gi() { curl http://www.gitignore.io/api/$@ ;}
 
 source ~/.bash-git-prompt/gitprompt.sh
 
-export M2_HOME=~/java/apache-maven-3.2.1
-
-export PATH=$M2_HOME/bin:$PATH
-
+for p in ~/java/*
+do 
+  export PATH=$p/bin:$PATH
+done
