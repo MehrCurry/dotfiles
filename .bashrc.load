@@ -15,3 +15,8 @@ for p in ~/java/*
 do 
   export PATH=$p/bin:$PATH
 done
+
+export M2_HOME=~/java/apache-maven-*
+export GRAILS_HOME=~/java/grails-*
+
+
