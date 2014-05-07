@@ -31,3 +31,6 @@ fi
 
 git config --global user.email "gzockoll@gmail.com"
 git config --global user.name "Guido Zockoll"
+
+export DOCKER_USER=gzockoll
+
