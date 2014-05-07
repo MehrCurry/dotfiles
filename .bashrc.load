@@ -9,12 +9,20 @@ export PATH=$PATH:$HOME/bin
 
 function gi() { curl http://www.gitignore.io/api/$@ ;}
 
+git config --global credential.helper "cache --timeout=3600"
+
+H=`hostname`
+P=`pwd`
+export GIT_PROMPT_START="$H:$P" 
+
 source ~/.git-prompt/gitprompt.sh
 
 for p in ~/java/*
 do 
   export PATH=$p/bin:$PATH
 done
+
+alias docker-clean='docker rm `docker ps --no-trunc -a -q`'
 
 export M2_HOME=~/java/apache-maven-*
 export GRAILS_HOME=~/java/grails-*
