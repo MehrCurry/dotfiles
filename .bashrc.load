@@ -13,7 +13,7 @@ git config --global credential.helper "cache --timeout=3600"
 
 H=`hostname`
 P=`pwd`
-export GIT_PROMPT_START="$H:$P" 
+export GIT_PROMPT_START="$H" 
 
 source ~/.git-prompt/gitprompt.sh
 
@@ -42,3 +42,7 @@ git config --global user.name "Guido Zockoll"
 
 export DOCKER_USER=gzockoll
 
+if [ -e "/usr/bin/java" ]
+then
+  export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
+fi
