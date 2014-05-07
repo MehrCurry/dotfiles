@@ -23,4 +23,15 @@ alias docker-clean='docker rm `docker ps --no-trunc -a -q`'
 export M2_HOME=~/java/apache-maven-*
 export GRAILS_HOME=~/java/grails-*
 
+if [ -e "/usr/bin/docker" ]
+then
+  ln -sf /usr/bin/docker ~/bin/docker.io
+fi
 
+if [ -e "/usr/bin/docker.io" ]
+then
+  ln -sf /usr/bin/docker.io ~/bin/docker
+fi
+
+git config --global user.email "gzockoll@gmail.com"
+git config --global user.name "Guido Zockoll"
