@@ -11,9 +11,9 @@ function gi() { curl http://www.gitignore.io/api/$@ ;}
 
 git config --global credential.helper "cache --timeout=3600"
 
-H=`hostname`
-P=`pwd`
-export GIT_PROMPT_START="$H" 
+#H=`hostname`
+#P=`pwd`
+#export GIT_PROMPT_START="$H" 
 
 source ~/.git-prompt/gitprompt.sh
 
