@@ -27,14 +27,9 @@ alias docker-clean='docker rm `docker ps --no-trunc -a -q`'
 export M2_HOME=~/java/apache-maven-*
 export GRAILS_HOME=~/java/grails-*
 
-if [ -e "/usr/bin/docker" ]
+if [ -e "~/.gvm/bin/gvm-init.sh" ]
 then
-  ln -sf /usr/bin/docker ~/bin/docker.io
-fi
-
-if [ -e "/usr/bin/docker.io" ]
-then
-  ln -sf /usr/bin/docker.io ~/bin/docker
+  source ~/.gvm/bin/gvm-init.sh
 fi
 
 git config --global user.email "gzockoll@gmail.com"
