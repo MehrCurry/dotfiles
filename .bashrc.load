@@ -39,5 +39,7 @@ export DOCKER_USER=gzockoll
 
 if [ -e "/usr/bin/java" ]
 then
-  export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
+  export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:/jre/bin/java::")
 fi
+export M2_HOME=$(pwd)/$(find java -name apache-maven-* -type d)
+
