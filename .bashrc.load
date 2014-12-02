@@ -11,17 +11,19 @@ function gi() { curl http://www.gitignore.io/api/$@ ;}
 
 git config --global credential.helper "cache --timeout=3600"
 
-#H=`hostname`
-#P=`pwd`
-#export GIT_PROMPT_START="$H" 
+H=`hostname`
+P=`pwd`
+export GIT_PROMPT_START="$H" 
 
 source ~/.git-prompt/gitprompt.sh
 
-for p in ~/java/*
-do 
-  export PATH=$p/bin:$PATH
-done
-
+if [ -d ~/java ]; then
+  for p in ~/java/*
+  do 
+    export PATH=$p/bin:$PATH
+  done
+  export M2_HOME=$(pwd)/$(find java -name apache-maven-* -type d)
+fi
 alias docker-clean='docker rm `docker ps --no-trunc -a -q`'
 
 export M2_HOME=~/java/apache-maven-*
@@ -41,5 +43,4 @@ if [ -e "/usr/bin/java" ]
 then
   export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:/jre/bin/java::")
 fi
-export M2_HOME=$(pwd)/$(find java -name apache-maven-* -type d)
 
