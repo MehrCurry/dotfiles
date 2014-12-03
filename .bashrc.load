@@ -26,7 +26,6 @@ if [ -d ~/java ]; then
 fi
 alias docker-clean='docker rm `docker ps --no-trunc -a -q`'
 
-export M2_HOME=~/java/apache-maven-*
 export GRAILS_HOME=~/java/grails-*
 
 if [ -e "~/.gvm/bin/gvm-init.sh" ]
