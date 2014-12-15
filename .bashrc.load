@@ -36,8 +36,13 @@ git config --global user.name "Guido Zockoll"
 
 export DOCKER_USER=gzockoll
 function dcb() {
+  if [ -n "$2" ]; then
+    DIR=$2
+  else
+    DIR=.
+  fi
   if [ -n "$1" ]; then
-    docker build --rm -t $DOCKER_USER/$1 .
+    docker build --rm -t $DOCKER_USER/$1 $DIR
   else
     echo "Usage: dcb <imagename>"
   fi
