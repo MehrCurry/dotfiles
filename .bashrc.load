@@ -48,7 +48,7 @@ function dcb() {
   fi
 }
 
-if [ -e "/usr/bin/java" -a -z $JAVA_HOME ]
+if [ -e "/usr/bin/java" -a -z "$JAVA_HOME" ]
 then
   export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:/jre/bin/java::")
 fi
