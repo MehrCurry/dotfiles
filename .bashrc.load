@@ -42,6 +42,7 @@ function dcb() {
     DIR=.
   fi
   if [ -n "$1" ]; then
+    echo building $DOCKER_USER/$1 ...
     docker build --rm -t $DOCKER_USER/$1 $DIR
   else
     echo "Usage: dcb <imagename>"
